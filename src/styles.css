@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+/* En tu archivo CSS */
+.icono {
+    width: 40px; /* Cambia el tamaño según sea necesario */
+    height: 40px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+
+  .imagenes {
+    width: 400px; /* Cambia el tamaño según sea necesario */
+    height: 400px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+  .imagenes2 {
+    width: 200px; /* Cambia el tamaño según sea necesario */
+    height:200px;
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+
+  .navbar-custom {
+    background-color: #141423; /* Este es un tono de azul más fuerte */
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    color: #ffffff; /* Color blanco */
+  }

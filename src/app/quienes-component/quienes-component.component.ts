@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./quienes-component.component.css']
 })
 export class QuienesComponentComponent {
-
+  titulo = 'Quiénes somos?';
 }

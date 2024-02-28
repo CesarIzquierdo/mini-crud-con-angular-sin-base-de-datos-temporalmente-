@@ -14,14 +14,20 @@ import { ContactoComponentComponent } from './contacto-component/contacto-compon
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
-
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { LogInComponent } from './log-in/log-in.component';
+import { loginService } from './login.service';
+import { CookieService } from 'ngx-cookie-service'; 
+import { loginGuardian } from './log-in/login-guardian';
 
  const appRoutes:Routes =[
   {path:'', component:HomeComponetComponent},
   {path:'proyectos', component:ProyectosComponentComponent},
   {path:'quienes', component: QuienesComponentComponent},
-  {path:'contacto', component:ContactoComponentComponent},
+  {path:'contacto', component:ContactoComponentComponent, canActivate:[loginGuardian]},
   {path:'actualiza/:id', component:ActualizaComponentComponent},
+  {path:'login', component:LogInComponent},
   {path:'**',component:ErrorPersonalizadoComponent},
  ];
 
@@ -35,12 +41,13 @@ import { ErrorPersonalizadoComponent } from './error-personalizado/error-persona
     QuienesComponentComponent,
     ContactoComponentComponent,
     ActualizaComponentComponent,
-    ErrorPersonalizadoComponent
+    ErrorPersonalizadoComponent,
+    LogInComponent
   ],
   imports: [
-    BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), HttpClientModule,
   ],
-  providers: [ServicioEmpleadosService, empleadosService],
+  providers: [ServicioEmpleadosService, empleadosService, DataService, loginService, CookieService, loginGuardian],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
