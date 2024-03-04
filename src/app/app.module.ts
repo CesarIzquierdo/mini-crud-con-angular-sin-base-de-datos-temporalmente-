@@ -20,6 +20,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { loginService } from './login.service';
 import { CookieService } from 'ngx-cookie-service'; 
 import { loginGuardian } from './log-in/login-guardian';
+import { FooterComponent } from './footer/footer.component';
 
  const appRoutes:Routes =[
   {path:'', component:HomeComponetComponent},
@@ -28,6 +29,7 @@ import { loginGuardian } from './log-in/login-guardian';
   {path:'contacto', component:ContactoComponentComponent, canActivate:[loginGuardian]},
   {path:'actualiza/:id', component:ActualizaComponentComponent},
   {path:'login', component:LogInComponent},
+  
   {path:'**',component:ErrorPersonalizadoComponent},
  ];
 
@@ -42,7 +44,8 @@ import { loginGuardian } from './log-in/login-guardian';
     ContactoComponentComponent,
     ActualizaComponentComponent,
     ErrorPersonalizadoComponent,
-    LogInComponent
+    LogInComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), HttpClientModule,
